@@ -27,3 +27,14 @@ jobs:
       with:
         name: build-artifact
         path: ${{ github.workspace }}/target/site/jacoco
+    - name: Generate JaCoCo Badge
+    
+      uses: cicirello/jacoco-badge-generator@v2
+      with:
+        generate-branches-badge: true
+
+    - name: Log coverage percentage
+      run: |
+        echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
+        echo "branch coverage = ${{ steps.jacoco.outputs.branches }}"
+        
