@@ -13,12 +13,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class HelloControllerTest {
+class HelloControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
 	
 	@Test
-	public void testGetHello() throws Exception {
+	void testGetHello() throws Exception {
 		
 		MvcResult result = mockMvc.perform(
 				MockMvcRequestBuilders.get("/hello")
@@ -30,7 +30,7 @@ public class HelloControllerTest {
 	}
 	
 	@Test
-	public void testGetHome() throws Exception {
+	void testGetHome() throws Exception {
 		
 		MvcResult result = mockMvc
 				.perform(
